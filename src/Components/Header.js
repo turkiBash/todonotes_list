@@ -4,9 +4,9 @@
 const Header = () => {
 
     return (
-        <div className="Header">
+        <div className="todo-header">
             <h1>
-                hi
+                Todo Notes
             </h1>
         </div>
     )
