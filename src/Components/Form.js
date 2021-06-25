@@ -1,14 +1,22 @@
 import React from 'react'
-import {useState} from "react/cjs/react.production.min";
 
-const Form = () => {
+const Form = ({ addText, setAddText }) => {
 
+const handleAddText = (e) => {
+    e.preventDefault()
+    setAddText(e.target.value)
+}
+
+const handleSetAddText = (e) => {
+    e.preventDefault()
+    setAddText(e.target.value)
+}
 
     return (
         <div className="form">
-            <form className="todo-form" value="Submit">
-                <input type="text" className="form-input" placeholder="Type Somthing...."/>
-                    <button className="add-todo" value="onAdd" >+</button>
+            <form className="todo-form" >
+                <input type="text" onSubmit={handleAddText} className="form-input" placeholder="Type Somthing...."/>
+                    <button className="add-todo" onSubmit={handleSetAddText}>+</button>
                     <button className="remove-todo">-</button>
                     <button className="edit-todo">edit</button>
             </form>
