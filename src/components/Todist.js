@@ -1,12 +1,12 @@
+import React from 'react';
 
-
-const TodoList = () => {
+const Todist = () => {
 
     return (
         <div className="Todo-list">
            <ul className="">
            </ul>
         </div>
-    )
+    );
 }
-export default TodoList;
+export default Todist;
