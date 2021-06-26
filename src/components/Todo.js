@@ -1,15 +1,17 @@
 import React from 'react';
 
-const Todo = ({text}) => {
+const Todo = ({setTodos, text, id, todo,todos}) => {
 
-    // const deleteHandler = (e) => {
-    //     let deleteBtn = e.target.value
-    //
-    // }
+
+    const deleteHandler = () => {
+        setTodos(todos.filter((el) => el.id !== todo.id));
+
+
+    }
     return (
         <div className="todo">
             <ul>{text}</ul>
-                <button className="delete-btn">Delete</button>
+                <button onClick={deleteHandler} className="delete-btn">Delete</button>
             <button className="edit-btn">Edit</button>
         </div>
     )
