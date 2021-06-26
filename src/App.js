@@ -1,6 +1,7 @@
 import Form from "./components/Form";
-import Todist from "./components/Todist";
+import TodoList from "./components/TodoList";
 import { useState } from "react";
+
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           setInputText={setInputText}
           inputText={inputText}
         />
-        <Todist />
+        <TodoList setTodos={setTodos} todos={todos}/>
     </div>
   );
 }
