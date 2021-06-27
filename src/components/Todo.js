@@ -1,18 +1,9 @@
 import React, {useState} from 'react';
 
-const Todo = ({setTodos, text, id, todo,todos, setInputText, inputText}) => {
+const Todo = ({setTodos, text, todo ,todos, id, inputText}) => {
 
     const [isEdit, setIsEdit] = useState(false);
     const [editText, setEditText] = useState(text);
-    //const [localStorage, setLocalStorage] = useState('');
-
-
-
-    // const localStorageHandler = (e) => {
-    //     window.localStorage.setItem("id", todos)
-    //     return localStorage
-    // }
-
 
 
     const inputTextHandler = (e) => {
@@ -30,15 +21,12 @@ const Todo = ({setTodos, text, id, todo,todos, setInputText, inputText}) => {
 
         setTodos(todos.filter((el) =>{
             if(el.id === todo.id){
-                todo.text = editText
+                todo.id = inputText
 
             }
                 setIsEdit(false)
                 return todos
-
         }))
-
-
     }
 
 
@@ -49,7 +37,7 @@ const Todo = ({setTodos, text, id, todo,todos, setInputText, inputText}) => {
 
                     <form className="todo-form" >
                     <input value={editText} onChange={inputTextHandler} type="text" className="form-input"  required placeholder="Type Somthing...." />
-                    <button className="edit-btn" onClick={editHandler}>Save</button>
+                    <button className="edit-btn" onChange={editHandler}>Save</button>
                      </form>
                  :
                 <div>
