@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
         <h1>
-            Turki's List
+            List
         </h1>
         <Form
           todos={todos}

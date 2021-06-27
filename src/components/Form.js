@@ -10,16 +10,18 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
     const submitTodoHandler = (e) => {
         e.preventDefault();
         setTodos([...todos,{text: inputText, id: Math.random() * 1000}]);
+        e.preventDefault();
         setInputText("")
+
     };
 
 
 
     return (
         <div className="form">
-            <form className="todo-form" >
-                <input value={inputText} onChange={inputTextHandler} type="text" className="form-input" placeholder="Type Somthing...."/>
-                <button onClick={submitTodoHandler} className="add-todo">add</button>
+            <form className="todo-form" onSubmit={submitTodoHandler} >
+                <input value={inputText} required onChange={inputTextHandler} type="text" className="form-input" placeholder="Type Somthing...." />
+                <button className="add-todo" >add</button>
             </form>
         </div>
     );
